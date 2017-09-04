@@ -80,8 +80,8 @@ def job():
     #removing the file from the source directory
     os.remove(file_to_read);
     
-    #estabilishing connection to ODTS mongodb server
-    db= establish_connection("mongodb://192.168.21.240","fortiss");
+    #estabilishing connection to external mongodb server
+    db= establish_connection("mongodb://192.168.21.240","dbname");
     #inserting the weather data into mongodb collection
     db.collection.insert_many(df.to_dict('records'))
 
